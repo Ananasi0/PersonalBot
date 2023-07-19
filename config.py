@@ -118,3 +118,5 @@ database_user_name = "root"
 database_user_password = "root"
 force_new_database = False
 delay = 3
+
+admins = []
