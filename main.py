@@ -28,3 +28,25 @@ def send_main_menu(message):
         print(str(message.chat.id) + "tried stopping the bot. Access denied.")
         bot.send_message(message.chat.id, "У вас нет доступа!")
 
+import os
+import sys
+import time
+
+def main():
+    # Your bot's main logic goes here
+    while True:
+        try:
+            # Run your bot
+            bot.polling()
+        except Exception as e:
+            # Log the exception or take any necessary actions
+            print(f"Error: {e}")
+            
+            # Restart the bot after a delay
+            # Delay in seconds before restarting
+            print(f"Restarting in {delay} seconds...")
+            time.sleep(delay)
+            os.execv(sys.executable, [sys.executable] + sys.argv)
+
+if __name__ == '__main__':
+    main()
